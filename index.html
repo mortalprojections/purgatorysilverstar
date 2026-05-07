@@ -3051,6 +3051,71 @@ dialog#notebookPopup::backdrop {
   </div>
 </header>
 
+<!-- ── MP3 PLAYER ── -->
+<section class="player-section enter-scale" id="player">
+  <div class="section-header">
+    <span class="section-num">01 —</span>
+    <h2 class="section-title">sounds</h2>
+    <div class="section-line"></div>
+  </div>
+
+<div class="marquee-divider">
+  <div class="marquee-track">
+    <span>oasis <em>✦</em> mojave 3 <em>✦</em> eden <em>✦</em> djo <em>✦</em> the smiths <em>✦</em> cocteau twins <em>✦</em> current joys <em>✦</em> beach house <em>✦</em></span>
+    <span>tv girl <em>✦</em> joy division <em>✦</em> radiohead <em>✦</em> nirvana <em>✦</em> the strokes <em>✦</em> the kooks <em>✦</em> my chemical romance <em>✦</em> tame impala <em>✦</em></span>
+  </div>
+</div>
+
+
+<br>
+
+<div class="mp3-player">
+
+  <!-- LEFT: album art -->
+  <div class="mp3-album-art">
+    <img id="mp3Art" src="" alt="" style="display:none;">
+    <div class="no-art" id="mp3NoArt">no art</div>
+  </div>
+
+  <!-- MIDDLE: info + progress + controls -->
+  <div class="mp3-screen-area">
+    <div class="mp3-track-info">
+      <span class="mp3-track-name" id="mp3Name">—</span>
+      <span class="mp3-track-artist" id="mp3Artist">select a track</span>
+    </div>
+    <div class="mp3-progress-wrap">
+      <div class="mp3-progress-bar" onclick="seekTo(event)" id="mp3ProgressBar">
+        <div class="mp3-progress-fill" id="mp3Progress" style="width:0%"></div>
+      </div>
+      <div class="mp3-time">
+        <span id="mp3Current">0:00</span>
+        <span id="mp3Duration">0:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mp3-controls">
+    <button class="mp3-btn" onclick="prevTrack()" title="prev">⏮</button>
+    <button class="mp3-btn play-btn" onclick="togglePlay()" id="mp3PlayBtn">▶</button>
+    <button class="mp3-btn" onclick="nextTrack()" title="next">⏭</button>
+    <div class="mp3-vol-row">
+      <span class="mp3-vol-icon">♪</span>
+      <div class="mp3-vol-slider" onclick="setVolume(event)" id="mp3VolBar">
+        <div class="mp3-vol-fill" id="mp3Vol"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: playlist -->
+  <div class="mp3-right">
+    <div class="mp3-playlist" id="mp3Playlist"></div>
+  </div>
+
+</div>
+</section>
+
+<div class="full-divider"></div>
+
 <!-- ── ZOOM HERO ── -->
 <div class="zoom-hero" id="zoomHero">
   <img class="zh-side-photo left" id="zhLeft" src="https://i.pinimg.com/control1/736x/e9/7f/f0/e97ff03aa8685f8b836d31640e48452f.jpg" alt="">
@@ -3075,7 +3140,7 @@ dialog#notebookPopup::backdrop {
 <!-- ── BLOG / JOURNAL ── -->
 <section id="blog" class="enter-left" style="max-width:1200px; margin:0 auto; padding: 72px 32px;">
   <div class="section-header">
-    <span class="section-num">01 —</span>
+    <span class="section-num">02 —</span>
     <h2 class="section-title">journal</h2>
     <div class="section-line"></div>
   </div>
@@ -3086,7 +3151,7 @@ dialog#notebookPopup::backdrop {
     <div class="blog-grid" id="blogGrid">
 
       <div class="blog-card" onclick="openJournalPopup('hopper')">
-        <img src="https://www.dalipaintings.com/assets/img/paintings/the-endless-enigma.jpg" alt="Nighthawks" loading="lazy">
+        <img src="https://www.dalipaintings.com/assets/img/paintings/the-endless-enigma.jpg" alt="" loading="lazy">
         <div class="blog-overlay">
           <span class="blog-tag">Salvador Dali</span>
           <h3 class="blog-post-title">The Endless Enigma</h3>
@@ -3095,7 +3160,7 @@ dialog#notebookPopup::backdrop {
       </div>
 
       <div class="blog-card" onclick="openJournalPopup('cartier')">
-        <img src="https://www.artchive.com/wp-content/uploads/2024/04/figures-at-the-seaside-pablo-picasso-1931.jpg" alt="Cartier Bresson" loading="lazy">
+        <img src="https://www.artchive.com/wp-content/uploads/2024/04/figures-at-the-seaside-pablo-picasso-1931.jpg" alt="" loading="lazy">
         <div class="blog-overlay">
           <span class="blog-tag">Pablo Picasso</span>
           <h3 class="blog-post-title">Figures at the Seaside</h3>
@@ -3104,7 +3169,7 @@ dialog#notebookPopup::backdrop {
       </div>
 
       <div class="blog-card" onclick="openJournalPopup('vermeer')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Le_Garçon_au_gilet_rouge%2C_par_Paul_Cézanne%2C_FWN_496.jpg" alt="Vermeer" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Le_Garçon_au_gilet_rouge%2C_par_Paul_Cézanne%2C_FWN_496.jpg" alt="" loading="lazy">
         <div class="blog-overlay">
           <span class="blog-tag">Paul Cézanne</span>
           <h3 class="blog-post-title">The Boy in the Red Vest</h3>
@@ -3113,7 +3178,7 @@ dialog#notebookPopup::backdrop {
       </div>
 
       <div class="blog-card" onclick="openJournalPopup('eggleston')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg" alt="Eggleston" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Anna_Ancher_-_Sunlight_in_the_blue_room_-_Google_Art_Project.jpg" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'">
         <div class="blog-overlay">
           <span class="blog-tag">Anna Ancher</span>
           <h3 class="blog-post-title">Sunlight in the Blue Room</h3>
@@ -3122,7 +3187,7 @@ dialog#notebookPopup::backdrop {
       </div>
 
       <div class="blog-card" onclick="openJournalPopup('klimt')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg" alt="Klimt" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg" alt="" loading="lazy">
         <div class="blog-overlay">
           <span class="blog-tag">Caspar David Friedrich</span>
           <h3 class="blog-post-title">The Abbey in the Oakwood</h3>
@@ -3131,7 +3196,7 @@ dialog#notebookPopup::backdrop {
       </div>
 
       <div class="blog-card" onclick="openJournalPopup('arbus')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Arnold_Böcklin_-_Die_Toteninsel_I_%28Basel%2C_Kunstmuseum%29.jpg" alt="Arbus" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Arnold_Böcklin_-_Die_Toteninsel_I_%28Basel%2C_Kunstmuseum%29.jpg" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400'">
         <div class="blog-overlay">
           <span class="blog-tag">Arnold Böcklin</span>
           <h3 class="blog-post-title">Isle of the Dead</h3>
@@ -3270,7 +3335,7 @@ dialog#notebookPopup::backdrop {
 <div class="room-section" id="room">
   <div class="room-header">
     <div class="section-header">
-      <span class="section-num">02 —</span>
+      <span class="section-num">03 —</span>
       <h2 class="section-title">room</h2>
       <div class="section-line"></div>
     </div>
@@ -3349,7 +3414,7 @@ dialog#notebookPopup::backdrop {
 <!-- ── CINEMA / VINTAGE TV ── -->
 <section class="tv-section enter-right" id="cinema">
   <div class="section-header">
-    <span class="section-num">03 —</span>
+    <span class="section-num">04 —</span>
     <h2 class="section-title">cinema</h2>
     <div class="section-line"></div>
   </div>
@@ -3381,7 +3446,7 @@ dialog#notebookPopup::backdrop {
   <!-- Film Shelf -->
   <div style="margin-top: 64px;">
     <div class="section-header" style="margin-bottom: 32px;">
-      <span class="section-num">03b —</span>
+      <span class="section-num">04b —</span>
       <h2 class="section-title">shelf</h2>
       <div class="section-line"></div>
     </div>
@@ -3398,7 +3463,7 @@ dialog#notebookPopup::backdrop {
 <!-- ── FORMULA 1 ── -->
 <section class="f1-section reveal" id="circuit">
   <div class="section-header">
-    <span class="section-num">04 —</span>
+    <span class="section-num">05 —</span>
     <h2 class="section-title">circuit</h2>
     <div class="section-line"></div>
   </div>
@@ -3485,7 +3550,7 @@ dialog#notebookPopup::backdrop {
 <!-- ── V GAMES ── -->
 <section class="f1-section reveal" id="formula">
   <div class="section-header">
-    <span class="section-num">04b —</span>
+    <span class="section-num">05b —</span>
     <h2 class="section-title">screen</h2>
     <div class="section-line"></div>
   </div>
@@ -3560,72 +3625,6 @@ dialog#notebookPopup::backdrop {
   </div>
 </section>
 
-
-<div class="full-divider"></div>
-
-<!-- ── MP3 PLAYER ── -->
-<section class="player-section enter-scale" id="player">
-  <div class="section-header">
-    <span class="section-num">04c —</span>
-    <h2 class="section-title">sounds</h2>
-    <div class="section-line"></div>
-  </div>
-
-<div class="marquee-divider">
-  <div class="marquee-track">
-    <span>oasis <em>✦</em> mojave 3 <em>✦</em> eden <em>✦</em> djo <em>✦</em> the smiths <em>✦</em> cocteau twins <em>✦</em> current joys <em>✦</em> beach house <em>✦</em></span>
-    <span>tv girl <em>✦</em> joy division <em>✦</em> radiohead <em>✦</em> nirvana <em>✦</em> the strokes <em>✦</em> the kooks <em>✦</em> my chemical romance <em>✦</em> tame impala <em>✦</em></span>
-  </div>
-</div>
-
-
-<br>
-
-<div class="mp3-player">
-
-  <!-- LEFT: album art -->
-  <div class="mp3-album-art">
-    <img id="mp3Art" src="" alt="" style="display:none;">
-    <div class="no-art" id="mp3NoArt">no art</div>
-  </div>
-
-  <!-- MIDDLE: info + progress + controls -->
-  <div class="mp3-screen-area">
-    <div class="mp3-track-info">
-      <span class="mp3-track-name" id="mp3Name">—</span>
-      <span class="mp3-track-artist" id="mp3Artist">select a track</span>
-    </div>
-    <div class="mp3-progress-wrap">
-      <div class="mp3-progress-bar" onclick="seekTo(event)" id="mp3ProgressBar">
-        <div class="mp3-progress-fill" id="mp3Progress" style="width:0%"></div>
-      </div>
-      <div class="mp3-time">
-        <span id="mp3Current">0:00</span>
-        <span id="mp3Duration">0:00</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="mp3-controls">
-    <button class="mp3-btn" onclick="prevTrack()" title="prev">⏮</button>
-    <button class="mp3-btn play-btn" onclick="togglePlay()" id="mp3PlayBtn">▶</button>
-    <button class="mp3-btn" onclick="nextTrack()" title="next">⏭</button>
-    <div class="mp3-vol-row">
-      <span class="mp3-vol-icon">♪</span>
-      <div class="mp3-vol-slider" onclick="setVolume(event)" id="mp3VolBar">
-        <div class="mp3-vol-fill" id="mp3Vol"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: playlist -->
-  <div class="mp3-right">
-    <div class="mp3-playlist" id="mp3Playlist"></div>
-    <button class="mp3-add-btn" onclick="addSong()">+ add song</button>
-  </div>
-
-</div>
-</section>
 
 <div class="full-divider"></div>
 
